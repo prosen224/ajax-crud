@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajax Image Crud</title>
+    <title>Contact Ls</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css"/>
@@ -18,13 +18,13 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add New Employee</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add New Contact</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="add_employee_form">
                 @csrf
                 <div class="modal-body p-4 pt-3 bg-light">
-                
+
                 <div class="mb-2">
                     <label for="name">Name</label>
                     <input type="text" name="name" class="form-control">
@@ -56,8 +56,8 @@
         <div class="col-lg-12">
             <div class="card shadow">
             <div class="card-header bg-success d-flex justify-content-between align-items-center">
-                <h3 class="text-light">Manage Employees</h3>
-                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addEmployeeModal"><i class="bi-plus-circle me-2"></i>Add New Employee</button>
+                <h3 class="text-light">Manage Contacts</h3>
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addEmployeeModal"><i class="bi-plus-circle me-2"></i>Add New Contact</button>
             </div>
             <div class="card-body" id="show_all_employees">
                 <h3 class="text-center text-secondary my-5">Loading...</h3>
@@ -73,33 +73,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-        
-$(document).ready(function () {
-    $.ajaxSetup({
-        headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
 
-    $(document).on('submit', '#add_employee_form', function (e){
-
-    e.preventDefault();
-
-    let formData = $('#+').serialize();
-
-    $.ajax({
-        type: "POST",
-        url: "{{route('store')}}",
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function (response) {
-
-        }
-    });
-
-    });
-});
 </script>
 
 </body>

@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ContactController;
 
 
-Route::get('/', [EmployeeController::class, 'index'])->name('index');
-Route::post('/store', [EmployeeController::class, 'store'])->name('store');
+Route::get('/', [ContactController::class, 'index'])->name('index');
